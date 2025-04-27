@@ -89,11 +89,13 @@
                     <p>Paste your script into a tab or open a script file using the "Open File" button. Use the "Execute" button to run the script. Manage multiple scripts easily with the '+' button to add new tabs.</p>
                     <p><em></em></p>
                     <pre><code>// Example code block (if needed)
-function greet(name) {
-  console.log("Hello, " + name + " from Phrogsploit!");
+local Params = {
+ RepoURL = "https://raw.githubusercontent.com/luau/SynSaveInstance/main/",
+ SSI = "saveinstance",
 }
-
-greet("User");</code></pre>
+local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
+local Options = {} -- Documentation here https://luau.github.io/UniversalSynSaveInstance/api/SynSaveInstance
+synsaveinstance(Options)</code></pre>
                 </article>
                  <p class="note">This documentation is currently basic. More details will be added soon.</p>
             </div>
