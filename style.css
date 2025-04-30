@@ -8,8 +8,8 @@
     --text-color: #e0e0e0; /* Light text */
 
     /* --- Primary Accent Color set to GREEN --- */
-    --accent-color: #20c997; /* The main GREEN accent */
-    --accent-hover: #1aa883; /* Darker GREEN for hover */
+    --accent-color: #08fc8c; /* The main GREEN accent */
+    --accent-hover: #08fc8c; /* Darker GREEN for hover */
     /* --- End Primary Accent Color Change --- */
 
     --border-color: #444;
