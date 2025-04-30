@@ -85,7 +85,7 @@ ul {
 header {
     background-color: var(--secondary-bg);
     border-bottom: 1px solid var(--border-color);
-    position: sticky; /* Optional: make header sticky */
+    position: sticky;
     top: 0;
     z-index: 1000;
     height: var(--header-height);
@@ -110,7 +110,7 @@ header .container {
 
 .logo i {
     margin-right: 10px;
-    color: var(--accent-color); /* Frog icon color */
+    color: var(--accent-color);
 }
 
 nav ul {
@@ -125,11 +125,11 @@ nav ul li a {
     color: var(--text-color);
     font-weight: 500;
     padding: 5px 0;
-    position: relative; /* For underline effect */
+    position: relative;
     transition: color 0.3s ease;
 }
 
-nav ul li a::after { /* Underline effect on hover/active */
+nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -149,7 +149,6 @@ nav ul li a:focus::after {
     width: 100%;
 }
 
-
 /* === Buttons === */
 .btn {
     display: inline-block;
@@ -161,7 +160,7 @@ nav ul li a:focus::after {
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 5px; /* Add some space around buttons */
+    margin: 5px;
 }
 
 .btn i {
@@ -185,45 +184,47 @@ nav ul li a:focus::after {
 }
 
 .btn-secondary:hover {
-    background-color: #666; /* Darker grey on hover */
+    background-color: #666;
     color: #fff;
     transform: translateY(-2px);
 }
 
 /* === Hero Section === */
 .hero-section {
-    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.9)), url('https://via.placeholder.com/1500x800/1a1a1a/cccccc?text=Background+Optional') no-repeat center center/cover; /* Optional BG image */
-    padding: 100px 0;
-    min-height: calc(100vh - var(--header-height));
+    /* Optional BG image - replace placeholder if needed */
+    /* background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.9)), url('...') no-repeat center center/cover; */
+    background-color: var(--primary-bg); /* Fallback solid color */
+    padding: 80px 0; /* Adjusted padding */
     display: flex;
     align-items: center;
-    text-align: center; /* Center text by default */
+    text-align: center;
 }
 
 .hero-content {
     display: flex;
-    flex-direction: column; /* Stack text and image vertically by default */
+    flex-direction: column;
     align-items: center;
     gap: 40px;
 }
 
-/* On larger screens, put text and image side-by-side */
+/* Side-by-side layout on larger screens */
 @media (min-width: 768px) {
     .hero-section {
-        text-align: left; /* Align text left on larger screens */
+        text-align: left;
+        padding: 100px 0;
     }
     .hero-content {
-        flex-direction: row; /* Side-by-side layout */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
     .hero-text {
-        flex: 1; /* Allow text to take available space */
-        max-width: 55%; /* Limit text width */
+        flex: 1;
+        max-width: 55%;
     }
     .hero-image {
-        flex: 1; /* Allow image to take available space */
-        max-width: 40%; /* Limit image width */
+        flex: 1;
+        max-width: 40%;
     }
 }
 
@@ -239,11 +240,11 @@ nav ul li a:focus::after {
     font-size: 1.2em;
     color: var(--light-grey);
     margin-bottom: 30px;
-    max-width: 600px; /* Limit subtitle width even on large screens */
-     margin-left: auto; /* Center subtitle if text-align is left */
-    margin-right: auto; /* Center subtitle if text-align is left */
+    max-width: 600px;
+     margin-left: auto;
+    margin-right: auto;
      @media (min-width: 768px) {
-        margin-left: 0; /* Reset margin for side-by-side */
+        margin-left: 0;
         margin-right: 0;
     }
 }
@@ -260,19 +261,19 @@ nav ul li a:focus::after {
 .platform-support i {
     font-size: 1.3em;
     margin: 0 5px;
-    color: var(--text-color); /* Make icons slightly more prominent */
+    color: var(--text-color);
 }
 .platform-support .coming-soon {
     font-size: 0.9em;
-    color: var(--medium-grey); /* Make 'coming soon' text less prominent */
+    color: var(--medium-grey);
     margin-left: 5px;
 }
 
 .hero-image img {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    max-width: 100%; /* Ensure image scales down */
-    height: auto;   /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 /* === Floating Animation === */
@@ -304,7 +305,7 @@ nav ul li a:focus::after {
     padding: 30px 20px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Keep hover transition */
 }
 
 .feature-item:hover {
@@ -319,7 +320,7 @@ nav ul li a:focus::after {
 /* === Download Section === */
 .download-section {
     padding: 80px 0;
-    background-color: var(--primary-bg); /* Different from features */
+    background-color: var(--primary-bg);
 }
 
 .download-grid {
@@ -338,8 +339,8 @@ nav ul li a:focus::after {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: transform 0.3s ease;
-    min-height: 250px; /* Ensure items have a consistent minimum height */
+    transition: transform 0.3s ease; /* Keep hover transition */
+    min-height: 250px;
 }
 
 .download-item:hover {
@@ -347,7 +348,7 @@ nav ul li a:focus::after {
 }
 
 .download-item i.platform-icon {
-    font-size: 3.5em; /* Slightly larger icon */
+    font-size: 3.5em;
     margin-bottom: 20px;
     color: var(--accent-color);
 }
@@ -360,28 +361,27 @@ nav ul li a:focus::after {
 .download-item p {
     font-size: 0.95em;
     color: var(--light-grey);
-    margin-bottom: 15px; /* Consistent margin */
-    flex-grow: 1; /* Allow text to push button down */
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .download-item .btn {
-    margin-top: auto; /* Push button to the bottom */
+    margin-top: auto;
     display: inline-block;
 }
 
  .download-item .coming-soon-text {
-    margin-top: auto; /* Push to bottom if no button */
+    margin-top: auto;
     font-style: italic;
     color: var(--medium-grey);
     font-weight: 500;
     font-size: 1.1em;
-    padding-top: 20px; /* Add some space above */
+    padding-top: 20px;
 }
 
-/* Section-specific Discord link */
 .download-section > .container > p {
     text-align: center;
-    margin-top: 40px; /* Increase space */
+    margin-top: 40px;
     font-size: 1.1em;
 }
 
@@ -394,7 +394,7 @@ nav ul li a:focus::after {
     background-color: var(--secondary-bg);
 }
 
-.content-section h2 i { /* Icon in heading */
+.content-section h2 i {
     margin-right: 10px;
 }
 
@@ -418,7 +418,7 @@ nav ul li a:focus::after {
 }
 
 .content-section ul {
-    list-style: disc; /* Use bullets for lists in content */
+    list-style: disc;
     margin-left: 25px;
     margin-bottom: 1rem;
 }
@@ -426,54 +426,57 @@ nav ul li a:focus::after {
     margin-bottom: 0.5rem;
 }
 
-
 /* Code Blocks */
 pre {
-    background-color: var(--primary-bg); /* Darker background for code */
-    color: #f8f8f2; /* Light text typical for code blocks */
+    background-color: var(--primary-bg);
+    color: #f8f8f2;
     padding: 15px;
     border-radius: 5px;
-    overflow-x: auto; /* Handle long lines */
+    overflow-x: auto;
     margin: 20px 0;
     border: 1px solid var(--border-color);
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    font-family: 'Courier New', Courier, monospace;
     font-size: 0.95em;
+    white-space: pre-wrap; /* Wrap long lines in code blocks */
+    word-wrap: break-word; /* Break words if necessary */
 }
 
 code {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for inline code */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 2px 5px;
     border-radius: 3px;
     font-family: 'Courier New', Courier, monospace;
 }
 
 pre code {
-    background-color: transparent; /* No extra background inside pre */
+    background-color: transparent;
     padding: 0;
+    white-space: pre-wrap; /* Ensure wrapping applies inside too */
+    word-wrap: break-word;
 }
 
 /* Note paragraph */
 .note {
-    background-color: rgba(var(--warning-color), 0.1); /* Use warning color subtly */
+    background-color: rgba(255, 193, 7, 0.1); /* Use warning color rgba */
     border-left: 4px solid var(--warning-color);
     padding: 15px;
     margin: 20px 0;
     border-radius: 4px;
-    font-style: italic;
+    /* Removed font-style italic from base .note */
     color: var(--text-color);
 }
 .note::before {
     content: "Note: ";
     font-weight: bold;
-    font-style: normal;
 }
 
 /* Disclaimer in Privacy */
-#privacy article p:last-of-type {
-    margin-top: 25px;
-    font-weight: bold;
-    color: var(--warning-color); /* Make disclaimer stand out */
-     font-style: italic;
+#privacy article p em strong { /* Target the specific structure */
+     font-weight: bold;
+     color: var(--warning-color);
+     font-style: italic; /* Keep italic specifically for disclaimer */
+     display: block; /* Make it block level */
+     margin-top: 25px;
 }
 
 
@@ -483,7 +486,7 @@ footer {
     color: var(--light-grey);
     padding: 30px 0;
     text-align: center;
-    margin-top: 50px; /* Ensure space above footer */
+    margin-top: 50px;
     border-top: 1px solid var(--border-color);
 }
 
@@ -496,27 +499,8 @@ footer {
     color: var(--accent-color);
 }
 
-
-/* === Animation Fade-in Control (Works with the JS) === */
-/* Initial state for elements animated by Intersection Observer */
-.features-section,
-.content-section,
-.feature-item,
-.download-item {
-    opacity: 0;
-    transform: translateY(20px);
-    /* Transition applied when the 'visible' class is added */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* State when element becomes visible */
-.features-section.visible,
-.content-section.visible,
-.feature-item.visible,
-.download-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* === REMOVED JS-DEPENDENT ANIMATION STYLES === */
+/* Elements are now visible by default */
 
 
 /* === Responsiveness === */
@@ -526,16 +510,15 @@ footer {
 
     .hero-section {
         padding: 60px 0;
-        min-height: auto; /* Adjust height on smaller screens */
     }
 
     .hero-content {
-        flex-direction: column; /* Ensure vertical stack */
+        flex-direction: column;
         text-align: center;
     }
      .hero-text, .hero-image {
-        max-width: 90%; /* Allow elements to take more width */
-        flex: none; /* Reset flex properties */
+        max-width: 90%;
+        flex: none;
     }
      .subtitle {
          max-width: 90%;
@@ -544,27 +527,15 @@ footer {
      }
 
     nav ul {
-        /* Basic mobile menu idea - hide by default */
-        /* You'd need JS to toggle this */
-        /* display: none; */
-        flex-direction: column; /* Example: stack links if menu was toggled */
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        background-color: var(--secondary-bg);
-        padding: 10px 0;
-        border-top: 1px solid var(--border-color);
-         /* For now, just allow wrapping */
+         /* Simple wrap for mobile nav */
          flex-wrap: wrap;
          justify-content: center;
-         margin-top: 10px; /* Add space if wrapped */
+         margin-left: 0; /* Reset margin */
+         padding: 0 10px; /* Add some padding */
     }
     nav ul li {
         margin: 5px 10px; /* Adjust spacing */
     }
-     /* Add a basic mobile menu toggle button - REQUIRES HTML CHANGE */
-     /* .menu-toggle { display: block; ... } */
 
     .features-grid, .download-grid {
         grid-template-columns: 1fr; /* Stack items vertically */
@@ -576,7 +547,7 @@ footer {
         align-items: center;
     }
     .cta-buttons .btn {
-        width: 80%; /* Make buttons wider */
+        width: 80%;
         margin-bottom: 10px;
     }
 }
