@@ -1,4 +1,4 @@
-/* style.css - FINAL VERSION WITH GREEN ACCENT */
+/* style.css - FINAL VERSION with GREEN ACCENT and Ghost Button */
 
 /* === Global Styles & Variables === */
 :root {
@@ -24,8 +24,7 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-/* --- The rest of the CSS is identical to the previous version --- */
-/* --- It uses var(--accent-color) which is now defined as GREEN above --- */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-family); background-color: var(--primary-bg); color: var(--text-color); line-height: 1.6; font-size: 16px; }
@@ -34,31 +33,50 @@ h1, h2, h3, h4, h5, h6 { margin-bottom: 1rem; font-weight: 600; color: var(--hea
 h1 { font-size: 2.8em; line-height: 1.2; } h2 { font-size: 2.2em; text-align: center; margin-bottom: 40px; } h3 { font-size: 1.4em; }
 p { margin-bottom: 1rem; }
 a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
-a:hover { color: var(--accent-color); } /* Hover links become green */
+a:hover { color: var(--accent-color); }
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
 strong { font-weight: 600; color: var(--text-color); }
+
+/* Header / Navigation */
 header { background-color: var(--secondary-bg); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; height: var(--header-height); display: flex; align-items: center; }
 header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .logo { font-size: 1.5em; font-weight: 700; color: var(--heading-text); display: flex; align-items: center; }
-.logo i { margin-right: 10px; color: var(--accent-color); } /* Logo frog icon uses GREEN variable (unless overridden by inline style) */
+.logo i { margin-right: 10px; color: var(--accent-color); }
 nav ul { display: flex; }
 nav ul li { margin-left: 25px; }
 nav ul li a { color: var(--text-color); font-weight: 500; padding: 5px 0; position: relative; transition: color 0.3s ease; }
 nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: var(--accent-color); transition: width 0.3s ease; }
 nav ul li a:hover, nav ul li a:focus { color: var(--heading-text); }
 nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
-.btn { display: inline-block; padding: 12px 25px; border: none; border-radius: var(--border-radius); font-size: 1em; font-weight: 600; cursor: pointer; text-align: center; transition: background-color 0.3s ease, transform 0.2s ease; margin: 5px; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 12px 25px; /* Keep base padding */ border: none; /* Base button has no border initially */ border-radius: var(--border-radius); font-size: 1em; font-weight: 600; cursor: pointer; text-align: center; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; margin: 5px; }
 .btn i { margin-right: 8px; }
-.btn-primary { background-color: var(--accent-color); color: var(--heading-text); } /* Primary button uses GREEN variable (unless overridden by inline style) */
-.btn-primary:hover { background-color: var(--accent-hover); color: var(--heading-text); transform: translateY(-2px); }
-.btn-secondary { background-color: var(--medium-grey); color: var(--text-color); }
-.btn-secondary:hover { background-color: #666; color: var(--heading-text); transform: translateY(-2px); }
+
+/* Primary Button (Green Fill) */
+.btn-primary { background-color: var(--accent-color); color: var(--heading-text); border: 2px solid var(--accent-color); /* Add border for consistency if needed */ }
+.btn-primary:hover { background-color: var(--accent-hover); color: var(--heading-text); border-color: var(--accent-hover); transform: translateY(-2px); }
+
+/* Secondary Button (Green Ghost Style - UPDATED) */
+.btn-secondary {
+    background-color: transparent;          /* Make background transparent */
+    color: var(--accent-color);             /* Make text GREEN */
+    border: 2px solid var(--accent-color);  /* Add 2px solid GREEN border */
+}
+.btn-secondary:hover {
+    background-color: var(--accent-color); /* Fill with GREEN on hover */
+    color: var(--heading-text);           /* Make text WHITE on hover */
+    transform: translateY(-2px);          /* Keep the slight lift effect */
+    /* border-color: var(--accent-color); */ /* Border already green */
+}
+
+/* Hero Section */
 .hero-section { background-color: var(--primary-bg); padding: 80px 0; display: flex; align-items: center; text-align: center; }
 .hero-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
 @media (min-width: 768px) { .hero-section { text-align: left; padding: 100px 0; } .hero-content { flex-direction: row; justify-content: space-between; align-items: center; } .hero-text { flex: 1; max-width: 55%; } .hero-image { flex: 1; max-width: 40%; } .subtitle { margin-left: 0; margin-right: 0; } }
 .hero-text h1 { margin-bottom: 20px; }
-.accent-text { color: var(--accent-color); } /* Hero accent text uses GREEN variable (unless overridden by inline style) */
+.accent-text { color: var(--accent-color); }
 .subtitle { font-size: 1.2em; color: var(--light-grey); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
 .cta-buttons { margin-bottom: 30px; }
 .platform-support { font-size: 0.9em; color: var(--light-grey); margin-top: 15px; }
@@ -67,6 +85,8 @@ nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
 .hero-image img { border-radius: var(--border-radius); box-shadow: var(--box-shadow); max-width: 100%; height: auto; }
 .animate-float { animation: float 6s ease-in-out infinite; }
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
+/* Features Section */
 .features-section { padding: 80px 0; background-color: var(--secondary-bg); }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
 .feature-item { background-color: var(--card-bg); padding: 30px 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); transition: transform 0.3s ease; }
@@ -74,6 +94,8 @@ nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
 .accent-icon { margin-bottom: 15px; font-size: 2em; }
 .features-section h2 { color: var(--accent-color); }
 .features-section .feature-item .accent-icon { color: var(--accent-color); }
+
+/* Download Section */
 .download-section { padding: 80px 0; background-color: var(--primary-bg); }
 .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
 .download-item { background-color: var(--card-bg); padding: 30px 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); display: flex; flex-direction: column; align-items: center; justify-content: space-between; transition: transform 0.3s ease; min-height: 250px; }
@@ -84,6 +106,8 @@ nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
 .download-item .btn { margin-top: auto; display: inline-block; }
 .download-item .coming-soon-text { margin-top: auto; font-style: italic; color: var(--medium-grey); font-weight: 500; font-size: 1.1em; padding-top: 20px; }
 .download-section > .container > p { text-align: center; margin-top: 40px; font-size: 1.1em; }
+
+/* Content Sections (Docs, Privacy) */
 .content-section { padding: 80px 0; }
 .content-section.alt-bg { background-color: var(--secondary-bg); }
 .content-section h2 { text-align: left; display: flex; align-items: center; }
@@ -97,13 +121,36 @@ nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
 #privacy article h3:first-of-type { margin-top: 0; }
 .content-section ul { list-style: disc; margin-left: 25px; margin-bottom: 1rem; }
 .content-section ul li { margin-bottom: 0.5rem; }
+
+/* Code Blocks */
 pre { background-color: var(--code-bg); color: var(--code-text); padding: 15px; border-radius: 5px; overflow-x: auto; margin: 20px 0; border: 1px solid var(--border-color); font-family: 'Courier New', Courier, monospace; font-size: 0.95em; white-space: pre-wrap; word-wrap: break-word; }
 code { background-color: rgba(255, 255, 255, 0.1); padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', Courier, monospace; }
 pre code { background-color: transparent; padding: 0; white-space: pre-wrap; word-wrap: break-word; }
+
+/* Note paragraph style */
 .note { background-color: transparent; border-left: 4px solid var(--accent-color); padding: 10px 15px; margin: 25px 0; border-radius: 0; color: var(--text-color); }
 .note::before { content: ""; }
+
+/* Disclaimer in Privacy */
 #privacy article p em strong { font-weight: bold; color: var(--warning-color); font-style: italic; display: block; margin-top: 25px; }
+
+/* Footer */
 footer { background-color: var(--footer-bg); color: var(--light-grey); padding: 30px 0; text-align: center; margin-top: 50px; border-top: 1px solid var(--border-color); }
 .footer-links a { color: var(--light-grey); margin: 0 10px; }
 .footer-links a:hover { color: var(--accent-color); }
-@media (max-width: 768px) { h1 { font-size: 2.2em; } h2 { font-size: 1.8em; } .hero-section { padding: 60px 0; } .hero-content { flex-direction: column; text-align: center; } .hero-text, .hero-image { max-width: 90%; flex: none; } .subtitle { max-width: 90%; margin-left: auto; margin-right: auto; } nav ul { flex-wrap: wrap; justify-content: center; margin-left: 0; padding: 0 10px; } nav ul li { margin: 5px 10px; } .features-grid, .download-grid { grid-template-columns: 1fr; } .cta-buttons { display: flex; flex-direction: column; align-items: center; } .cta-buttons .btn { width: 80%; margin-bottom: 10px; } .content-section h2 { text-align: center; justify-content: center; flex-direction: column; gap: 5px; } .content-section h2 i { margin-right: 0; } }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; } h2 { font-size: 1.8em; }
+    .hero-section { padding: 60px 0; }
+    .hero-content { flex-direction: column; text-align: center; }
+    .hero-text, .hero-image { max-width: 90%; flex: none; }
+    .subtitle { max-width: 90%; margin-left: auto; margin-right: auto; }
+    nav ul { flex-wrap: wrap; justify-content: center; margin-left: 0; padding: 0 10px; }
+    nav ul li { margin: 5px 10px; }
+    .features-grid, .download-grid { grid-template-columns: 1fr; }
+    .cta-buttons { display: flex; flex-direction: column; align-items: center; }
+    .cta-buttons .btn { width: 80%; margin-bottom: 10px; }
+    .content-section h2 { text-align: center; justify-content: center; flex-direction: column; gap: 5px; }
+    .content-section h2 i { margin-right: 0; }
+}
