@@ -6,9 +6,10 @@
     --secondary-bg: #2a2a2a;
     --card-bg: #333;
     --text-color: #e0e0e0; /* Light text */
-    --accent-color: #7b68ee; /* MediumSlateBlue - Global Accent (Buttons etc) */
-    --accent-hover: #6a5acd;
-    --highlight-green: #20c997; /* Specific Green for Features/Docs */
+    /* --- Accent Color Changed to GREEN --- */
+    --accent-color: #20c997; /* Primary Accent GREEN */
+    --accent-hover: #1aa883; /* Darker Green for Hover */
+    /* --- End Accent Color Change --- */
     --border-color: #444;
     --link-color: #87ceeb; /* SkyBlue for links */
     --footer-bg: #111;
@@ -17,6 +18,7 @@
     --light-grey: #888;
     --medium-grey: #555;
     --heading-text: #ffffff; /* White for most headings */
+    --warning-color: #ffc107; /* Keep warning color yellow */
 
     --font-family: 'Poppins', sans-serif;
     --header-height: 60px;
@@ -69,7 +71,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Hover links become green */
 }
 
 img {
@@ -82,7 +84,7 @@ ul {
     list-style: none;
 }
 
-strong { /* Ensure bold stands out slightly more if needed */
+strong {
     font-weight: 600;
     color: var(--text-color);
 }
@@ -116,7 +118,7 @@ header .container {
 
 .logo i {
     margin-right: 10px;
-    color: var(--accent-color); /* Keep logo frog purple/blue */
+    color: var(--accent-color); /* Logo frog icon is now GREEN */
 }
 
 nav ul {
@@ -142,7 +144,7 @@ nav ul li a::after {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Underline effect is GREEN */
     transition: width 0.3s ease;
 }
 
@@ -174,12 +176,12 @@ nav ul li a:focus::after {
 }
 
 .btn-primary {
-    background-color: var(--accent-color); /* Use global accent */
+    background-color: var(--accent-color); /* Primary button is GREEN */
     color: var(--heading-text);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--accent-hover); /* Darker green hover */
     color: var(--heading-text);
     transform: translateY(-2px);
 }
@@ -220,7 +222,7 @@ nav ul li a:focus::after {
 }
 
 .hero-text h1 { margin-bottom: 20px; }
-.accent-text { color: var(--accent-color); } /* Keep hero accent purple/blue */
+.accent-text { color: var(--accent-color); } /* Hero accent text is GREEN */
 
 .subtitle {
     font-size: 1.2em;
@@ -268,18 +270,17 @@ nav ul li a:focus::after {
 
 .feature-item:hover { transform: translateY(-5px); }
 
-.accent-icon { /* General class for icons within items */
+.accent-icon {
     margin-bottom: 15px;
-    font-size: 2em; /* Default size */
+    font-size: 2em;
 }
 
-/* === Features Section Specific Colors (Incorporated) === */
+/* Features Section Heading and Icons */
 .features-section h2 {
-    color: var(--highlight-green); /* Use specific green */
+    color: var(--accent-color); /* Use primary (now green) accent */
 }
 .features-section .feature-item .accent-icon {
-    color: var(--highlight-green); /* Use specific green */
-    /* font-size is handled by the general .accent-icon rule now */
+    color: var(--accent-color); /* Use primary (now green) accent */
 }
 
 /* === Download Section === */
@@ -313,13 +314,13 @@ nav ul li a:focus::after {
 .download-item i.platform-icon {
     font-size: 3.5em;
     margin-bottom: 20px;
-    color: var(--accent-color); /* Keep download icons purple/blue */
+    color: var(--accent-color); /* Download platform icons are GREEN */
 }
 
  .download-item h3 { margin-bottom: 10px; font-size: 1.2em; }
 
 .download-item p { font-size: 0.95em; color: var(--light-grey); margin-bottom: 15px; flex-grow: 1; }
-.download-item .btn { margin-top: auto; display: inline-block; }
+.download-item .btn { margin-top: auto; display: inline-block; } /* Primary button here will be green */
 .download-item .coming-soon-text { margin-top: auto; font-style: italic; color: var(--medium-grey); font-weight: 500; font-size: 1.1em; padding-top: 20px; }
 
 .download-section > .container > p { text-align: center; margin-top: 40px; font-size: 1.1em; }
@@ -332,25 +333,23 @@ nav ul li a:focus::after {
     background-color: var(--secondary-bg);
 }
 
-/* General H2 styling within content sections */
 .content-section h2 {
-     text-align: left; /* Override centered default for section titles */
-     display: flex; /* Align icon and text */
+     text-align: left;
+     display: flex;
      align-items: center;
 }
 .content-section h2 i {
-    margin-right: 15px; /* Space between icon and text */
-    font-size: 0.9em; /* Slightly smaller icon relative to text */
+    margin-right: 15px;
+    font-size: 0.9em;
 }
 
-/* Specific styling for Docs Section Heading */
+/* Docs Section Heading */
 #docs h2, #docs h2 i {
-    color: var(--highlight-green); /* Green heading and icon for Docs */
+    color: var(--accent-color); /* Docs heading is GREEN */
 }
-/* Specific styling for Privacy Section Heading (keep default/white) */
+/* Privacy Section Heading (now white, was white before too) */
 #privacy h2, #privacy h2 i {
-     color: var(--heading-text); /* Explicitly white for privacy icon+text */
-     /* Or use a different color if desired */
+     color: var(--heading-text);
 }
 
 .content-section article {
@@ -361,22 +360,22 @@ nav ul li a:focus::after {
     box-shadow: var(--box-shadow);
 }
 
-/* Specific styling for Docs Subheadings */
+/* Docs Subheadings */
 #docs article h3 {
     color: var(--heading-text); /* White subheading */
-    font-weight: 700; /* Bolder */
+    font-weight: 700;
     margin-top: 25px;
     margin-bottom: 15px;
-    border-bottom: none; /* Remove border */
+    border-bottom: none;
     padding-bottom: 0;
 }
-#docs article h3:first-of-type { /* Use first-of-type for better targeting */
+#docs article h3:first-of-type {
     margin-top: 0;
 }
 
-/* Styling for Privacy Subheadings (keep original style) */
+/* Privacy Subheadings */
 #privacy article h3 {
-    color: var(--accent-color); /* Purple/blue subheading */
+    color: var(--accent-color); /* Privacy subheadings are GREEN */
     margin-top: 20px;
     margin-bottom: 15px;
     border-bottom: 1px solid var(--border-color); /* Keep border */
@@ -414,28 +413,23 @@ pre code {
     background-color: transparent; padding: 0; white-space: pre-wrap; word-wrap: break-word;
 }
 
-/* Note paragraph style (updated to match docs screenshot) */
+/* Note paragraph style */
 .note {
-    background-color: transparent; /* Remove background tint */
-    border-left: 4px solid var(--highlight-green); /* Green left border */
-    padding: 10px 15px; /* Adjust padding */
+    background-color: transparent;
+    border-left: 4px solid var(--accent-color); /* Note border is GREEN */
+    padding: 10px 15px;
     margin: 25px 0;
-    border-radius: 0; /* Straighter look if desired, or keep var(--border-radius) */
+    border-radius: 0;
     color: var(--text-color);
-    /* font-style: italic; /* Removed global italic */
 }
 .note::before {
-    content: ""; /* Remove "Note: " text */
-    /* If you want the text back, use: content: "Note: "; font-weight: bold; */
+    content: "";
 }
-/* If you only want the docs note styled this way: */
-/* #docs .note { ... } */
-
 
 /* Disclaimer in Privacy */
 #privacy article p em strong {
      font-weight: bold;
-     color: var(--warning-color); /* Keep disclaimer yellow/warning */
+     color: var(--warning-color); /* Keep disclaimer yellow */
      font-style: italic;
      display: block;
      margin-top: 25px;
@@ -452,7 +446,7 @@ footer {
 }
 
 .footer-links a { color: var(--light-grey); margin: 0 10px; }
-.footer-links a:hover { color: var(--accent-color); }
+.footer-links a:hover { color: var(--accent-color); } /* Footer link hover is GREEN */
 
 /* === REMOVED JS-DEPENDENT ANIMATION STYLES === */
 
@@ -473,14 +467,13 @@ footer {
     .cta-buttons { display: flex; flex-direction: column; align-items: center; }
     .cta-buttons .btn { width: 80%; margin-bottom: 10px; }
 
-     /* Adjust content section heading alignment for mobile */
      .content-section h2 {
-        text-align: center; /* Center headings on mobile */
-        justify-content: center; /* Center icon+text block */
-        flex-direction: column; /* Stack icon above text */
-        gap: 5px; /* Space between icon and text */
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
      }
       .content-section h2 i {
-         margin-right: 0; /* Remove side margin */
+         margin-right: 0;
       }
 }
