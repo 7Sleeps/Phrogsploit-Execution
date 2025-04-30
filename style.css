@@ -1,4 +1,4 @@
-/* style.css - FINAL VERSION with GREEN ACCENT and Ghost Button */
+/* style.css - FINAL VERSION with NEW BRIGHT GREEN ACCENT (#08fc8c) and Ghost Button */
 
 /* === Global Styles & Variables === */
 :root {
@@ -6,10 +6,12 @@
     --secondary-bg: #2a2a2a;
     --card-bg: #333;
     --text-color: #e0e0e0; /* Light text */
-    /* --- Primary Accent Color set to GREEN --- */
-    --accent-color: #20c997; /* The main GREEN accent */
-    --accent-hover: #1aa883; /* Darker GREEN for hover */
+
+    /* --- Primary Accent Color set to NEW BRIGHT GREEN --- */
+    --accent-color: #08fc8c; /* The NEW BRIGHT GREEN accent */
+    --accent-hover: #07d97b; /* Slightly darker/less saturated bright GREEN for hover */
     /* --- End Primary Accent Color Change --- */
+
     --border-color: #444;
     --link-color: #87ceeb; /* SkyBlue for links */
     --footer-bg: #111;
@@ -19,11 +21,14 @@
     --medium-grey: #555;
     --heading-text: #ffffff; /* White for most headings */
     --warning-color: #ffc107; /* Keep warning color yellow */
+
     --font-family: 'Poppins', sans-serif;
     --header-height: 60px;
     --border-radius: 8px;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* --- The rest of the CSS uses var(--accent-color) which is now the new bright green --- */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -33,7 +38,7 @@ h1, h2, h3, h4, h5, h6 { margin-bottom: 1rem; font-weight: 600; color: var(--hea
 h1 { font-size: 2.8em; line-height: 1.2; } h2 { font-size: 2.2em; text-align: center; margin-bottom: 40px; } h3 { font-size: 1.4em; }
 p { margin-bottom: 1rem; }
 a { color: var(--link-color); text-decoration: none; transition: color 0.3s ease; }
-a:hover { color: var(--accent-color); }
+a:hover { color: var(--accent-color); } /* Hover links become bright green */
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; }
 strong { font-weight: 600; color: var(--text-color); }
@@ -42,7 +47,7 @@ strong { font-weight: 600; color: var(--text-color); }
 header { background-color: var(--secondary-bg); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; height: var(--header-height); display: flex; align-items: center; }
 header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .logo { font-size: 1.5em; font-weight: 700; color: var(--heading-text); display: flex; align-items: center; }
-.logo i { margin-right: 10px; color: var(--accent-color); }
+.logo i { margin-right: 10px; color: var(--accent-color); } /* Logo frog icon uses bright green variable (unless overridden by inline style) */
 nav ul { display: flex; }
 nav ul li { margin-left: 25px; }
 nav ul li a { color: var(--text-color); font-weight: 500; padding: 5px 0; position: relative; transition: color 0.3s ease; }
@@ -51,32 +56,23 @@ nav ul li a:hover, nav ul li a:focus { color: var(--heading-text); }
 nav ul li a:hover::after, nav ul li a:focus::after { width: 100%; }
 
 /* Buttons */
-.btn { display: inline-block; padding: 12px 25px; /* Keep base padding */ border: none; /* Base button has no border initially */ border-radius: var(--border-radius); font-size: 1em; font-weight: 600; cursor: pointer; text-align: center; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; margin: 5px; }
+.btn { display: inline-block; padding: 12px 25px; border: none; border-radius: var(--border-radius); font-size: 1em; font-weight: 600; cursor: pointer; text-align: center; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; margin: 5px; }
 .btn i { margin-right: 8px; }
 
-/* Primary Button (Green Fill) */
-.btn-primary { background-color: var(--accent-color); color: var(--heading-text); border: 2px solid var(--accent-color); /* Add border for consistency if needed */ }
-.btn-primary:hover { background-color: var(--accent-hover); color: var(--heading-text); border-color: var(--accent-hover); transform: translateY(-2px); }
+/* Primary Button (NEW BRIGHT GREEN Fill) */
+.btn-primary { background-color: var(--accent-color); color: #111; /* Use dark text for contrast on bright green */ border: 2px solid var(--accent-color); }
+.btn-primary:hover { background-color: var(--accent-hover); color: #000; /* Darker text on hover */ border-color: var(--accent-hover); transform: translateY(-2px); }
 
-/* Secondary Button (Green Ghost Style - UPDATED) */
-.btn-secondary {
-    background-color: transparent;          /* Make background transparent */
-    color: var(--accent-color);             /* Make text GREEN */
-    border: 2px solid var(--accent-color);  /* Add 2px solid GREEN border */
-}
-.btn-secondary:hover {
-    background-color: var(--accent-color); /* Fill with GREEN on hover */
-    color: var(--heading-text);           /* Make text WHITE on hover */
-    transform: translateY(-2px);          /* Keep the slight lift effect */
-    /* border-color: var(--accent-color); */ /* Border already green */
-}
+/* Secondary Button (NEW BRIGHT GREEN Ghost Style) */
+.btn-secondary { background-color: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
+.btn-secondary:hover { background-color: var(--accent-color); color: #111; /* Use dark text for contrast on hover */ transform: translateY(-2px); }
 
 /* Hero Section */
 .hero-section { background-color: var(--primary-bg); padding: 80px 0; display: flex; align-items: center; text-align: center; }
 .hero-content { display: flex; flex-direction: column; align-items: center; gap: 40px; }
 @media (min-width: 768px) { .hero-section { text-align: left; padding: 100px 0; } .hero-content { flex-direction: row; justify-content: space-between; align-items: center; } .hero-text { flex: 1; max-width: 55%; } .hero-image { flex: 1; max-width: 40%; } .subtitle { margin-left: 0; margin-right: 0; } }
 .hero-text h1 { margin-bottom: 20px; }
-.accent-text { color: var(--accent-color); }
+.accent-text { color: var(--accent-color); } /* Hero accent text uses bright green variable (unless overridden by inline style) */
 .subtitle { font-size: 1.2em; color: var(--light-grey); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
 .cta-buttons { margin-bottom: 30px; }
 .platform-support { font-size: 0.9em; color: var(--light-grey); margin-top: 15px; }
