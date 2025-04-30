@@ -7,85 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Basic styling for the new download section - Add to your style.css */
-        .download-section {
-            padding: 60px 0;
-            background-color: #f9f9f9; /* Or keep consistent with other sections */
-        }
-        .download-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        .download-item {
-            background-color: #fff; /* Or dark theme equivalent */
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-             transition: transform 0.3s ease;
-        }
-        .download-item:hover {
-             transform: translateY(-5px);
-        }
-        .download-item i.platform-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-            color: #7b68ee; /* Accent color */
-        }
-         .download-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-         }
-        .download-item .btn {
-            margin-top: 20px;
-            display: inline-block; /* Ensure button takes space */
-        }
-         .download-item .coming-soon-text {
-            margin-top: 20px;
-            font-style: italic;
-            color: #888;
-             font-weight: 500;
-        }
-        .platform-support .coming-soon {
-            font-size: 0.9em;
-            color: #bbb;
-            margin-left: 5px;
-        }
-        /* Basic fade-in animation */
-        .download-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-        .download-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Ensure icons inside buttons look okay */
-        .btn i {
-            margin-right: 8px;
-        }
-        /* Style for the hero section platform list */
-        .platform-support i { margin: 0 5px; }
-
-        /* Dark theme adjustments if needed (add to your dark mode CSS) */
-        /*
-        body.dark-theme .download-section { background-color: #2a2a2a; }
-        body.dark-theme .download-item { background-color: #333; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
-        body.dark-theme .download-item h3 { color: #eee; }
-        body.dark-theme .download-item .coming-soon-text { color: #aaa; }
-        */
-    </style>
 </head>
 <body>
 
@@ -97,10 +18,9 @@
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#download">Download</a></li> {/* Added link to new section */}
+                <li><a href="#download">Download</a></li>
                 <li><a href="#docs">Docs</a></li>
                 <li><a href="#privacy">Privacy</a></li>
-                {/* Discord link removed from here */}
             </ul>
         </nav>
     </header>
@@ -112,14 +32,12 @@
                     <h1>Unleash Your Scripts with <span class="accent-text">Phrogsploit</span></h1>
                     <p class="subtitle">A sleek, modern, and powerful multi-platform script executor designed for efficiency and ease of use.</p>
                     <div class="cta-buttons">
-                        {/* Changed Button: Text updated, links to #download, Discord info removed */}
                         <a href="#download" class="btn btn-primary"><i class="fas fa-download"></i> Download Phrogsploit</a>
                         <a href="#features" class="btn btn-secondary">Learn More</a>
                     </div>
                     <div class="platform-support">
                         <span>Available on:</span>
                         <i class="fab fa-windows" title="Windows"></i>
-                        {/* Updated macOS status and grouped coming soon */}
                         <span class="coming-soon">(<i class="fab fa-apple" title="macOS Coming Soon"></i> macOS, <i class="fab fa-android" title="Android Coming Soon"></i> Android, <i class="fab fa-app-store-ios" title="iOS Coming Soon"></i> iOS Coming Soon)</span>
                     </div>
                 </div>
@@ -151,7 +69,7 @@
                      <div class="feature-item">
                         <i class="fas fa-laptop-code fa-2x accent-icon"></i>
                         <h3>Cross-Platform</h3>
-                        <p>Native support for Windows, with other platforms planned.</p> {/* Adjusted text slightly */}
+                        <p>Native support for Windows, with other platforms planned.</p>
                     </div>
                 </div>
             </div>
@@ -165,9 +83,7 @@
                         <i class="fab fa-windows platform-icon"></i>
                         <h3>Windows</h3>
                         <p>Get the latest version for Windows.</p>
-                        {/* ====> REPLACE '#' WITH YOUR ACTUAL WINDOWS DOWNLOAD LINK <==== */}
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download for Windows</a>
-                        {/* ====> END OF LINK REPLACEMENT <==== */}
                     </div>
                     <div class="download-item">
                         <i class="fab fa-apple platform-icon"></i>
@@ -188,13 +104,13 @@
                         <p class="coming-soon-text">Coming Soon</p>
                     </div>
                 </div>
-                 <p style="text-align: center; margin-top: 30px;">Need help or want to join the community? <a href="https://discord.gg/4aYfzYNNh8" target="_blank">Join our Discord!</a></p>
+                 <p style="text-align: center; margin-top: 40px;">Need help or want to join the community? <a href="https://discord.gg/4aYfzYNNh8" target="_blank">Join our Discord!</a></p>
             </div>
         </section>
+
         <section id="docs" class="content-section">
             <div class="container">
                 <h2><i class="fas fa-book"></i> Documentation</h2>
-                {/* Updated installation instructions */}
                 <p>Welcome to the Phrogsploit documentation. Here you'll find information on how to get started, use the features, and understand the API (if applicable).</p>
                 <article>
                     <h3>Getting Started</h3>
@@ -204,14 +120,15 @@
                     <h3>Using the Executor</h3>
                     <p>Paste your script into a tab or open a script file using the "Open File" button. Use the "Execute" button to run the script. Manage multiple scripts easily with the '+' button to add new tabs.</p>
                     <p><em>Example script:</em></p>
-                    <pre><code>// Example code block (if needed)
+                    <pre><code>
 local Params = {
  RepoURL = "https://raw.githubusercontent.com/luau/SynSaveInstance/main/",
  SSI = "saveinstance",
 }
 local synsaveinstance = loadstring(game:HttpGet(Params.RepoURL .. Params.SSI .. ".luau", true), Params.SSI)()
 local Options = {} -- Documentation here https://luau.github.io/UniversalSynSaveInstance/api/SynSaveInstance
-synsaveinstance(Options)</code></pre>
+synsaveinstance(Options)
+                    </code></pre>
                 </article>
                  <p class="note">This documentation is currently basic. More details will be added soon.</p>
             </div>
@@ -242,7 +159,7 @@ synsaveinstance(Options)</code></pre>
                      <h3>Policy Updates</h3>
                      <p>This Privacy Policy may be updated periodically. We will notify users of significant changes, likely through the Discord server or application updates.</p>
 
-                    <p><em><strong>Disclaimer:</strong> We are not responsible for any of the malicious activities you do while using our applications. We are also not responsible if you get punished by a game while using our products. </em></p>
+                    <p><em><strong>Disclaimer:</strong> We are not responsible for any of the malicious activities you do while using our applications. We are also not responsible if you get punished by a game while using our products.</em></p>
                 </article>
             </div>
         </section>
@@ -252,50 +169,10 @@ synsaveinstance(Options)</code></pre>
         <div class="container">
             <p>&copy; 2025 Phrogsploit. All rights reserved.</p>
             <div class="footer-links">
-                 {/* Discord link added here */}
                  <a href="#docs">Docs</a> | <a href="#privacy">Privacy Policy</a> | <a href="https://discord.gg/4aYfzYNNh8" target="_blank">Join Discord</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Basic intersection observer for simple fade-in effects
-        // Added .download-item to the selector
-        const animatedElements = document.querySelectorAll('.features-section, .content-section, .feature-item, .download-item'); // Added .download-item
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                     // Optional: Unobserve after animation to save resources
-                     // observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
-
-        animatedElements.forEach(el => {
-            // Ensure initial styles for animation are set if not done in CSS
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            observer.observe(el);
-        });
-
-        // Smooth scroll for internal links (optional but nice)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const hrefAttr = this.getAttribute('href');
-                // Check if it's more than just '#'
-                if (hrefAttr.length > 1 && document.querySelector(hrefAttr)) {
-                    e.preventDefault();
-                    document.querySelector(hrefAttr).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-
-</body>
+    </body>
 </html>
