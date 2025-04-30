@@ -7,13 +7,59 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+
+    <style>
+        /* Hardcoding the bright green color for specific elements */
+        .logo i,
+        .accent-text,
+        .features-section h2,
+        .features-section .feature-item .accent-icon,
+        .download-item i.platform-icon,
+        #docs h2, #docs h2 i,
+        #privacy article h3, /* Privacy subheadings use accent */
+        .btn-secondary, /* Ghost button text/border */
+        a:hover, /* General link hover */
+        nav ul li a:hover, /* Nav link hover (redundant but safe) */
+        .footer-links a:hover {
+            color: #08fc8c !important; /* Force bright green text/icon color */
+        }
+
+        nav ul li a::after {
+             background-color: #08fc8c !important; /* Force bright green underline */
+        }
+
+        .btn-primary {
+            background-color: #08fc8c !important; /* Force bright green background */
+            border-color: #08fc8c !important;     /* Force bright green border */
+            color: #111 !important;              /* Use dark text for contrast */
+        }
+        .btn-primary:hover {
+            background-color: #07d97b !important; /* Slightly darker green hover */
+            border-color: #07d97b !important;
+            color: #000 !important;              /* Darker text on hover */
+        }
+
+        .btn-secondary {
+            border: 2px solid #08fc8c !important; /* Force bright green border */
+            background-color: transparent !important; /* Ensure transparent background */
+            color: #08fc8c !important; /* Force bright green text */
+        }
+        .btn-secondary:hover {
+            background-color: #08fc8c !important; /* Fill with bright green on hover */
+            color: #111 !important;              /* Use dark text for contrast */
+        }
+
+        .note {
+            border-left-color: #08fc8c !important; /* Force bright green border */
+        }
+    </style>
+    </head>
 <body>
 
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <i class="fa-solid fa-frog" style="color: #08fc8c;"></i> Phrogsploit
+                <i class="fa-solid fa-frog"></i> Phrogsploit
             </a>
             <ul>
                 <li><a href="#hero">Home</a></li>
@@ -30,14 +76,15 @@
             <div class="container hero-content">
                 <div class="hero-text">
                     <h1>Unleash Your Scripts with
-                        <span class="accent-text" style="color: #08fc8c;">Phrogsploit</span>
+                        <span class="accent-text">Phrogsploit</span>
                     </h1>
                     <p class="subtitle">A sleek, modern, and powerful multi-platform script executor designed for efficiency and ease of use.</p>
                     <div class="cta-buttons">
-                        <a href="#download" class="btn btn-primary" style="background-color: #08fc8c;">
+                        <a href="#download" class="btn btn-primary">
                             <i class="fas fa-download"></i> Download Phrogsploit
                         </a>
-                        <a href="#features" class="btn btn-secondary">Learn More</a> </div>
+                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                    </div>
                     <div class="platform-support">
                         <span>Available on:</span>
                         <i class="fab fa-windows" title="Windows"></i>
